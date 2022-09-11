@@ -1,5 +1,6 @@
+import time
 
-
+start = time.perf_counter()
 Fib = [0] * (10**7 + 1)
 Fib[0], Fib[1] = 0, 1
 with open("input.txt", "r") as file:
@@ -9,3 +10,4 @@ with open("input.txt", "r") as file:
             Fib[i] = (Fib[i - 1] + Fib[i - 2]) % 10
     with open("output.txt", "w") as out:
         print(Fib[n], file=out)
+        print(time.perf_counter() - start)
