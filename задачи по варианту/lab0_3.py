@@ -11,5 +11,5 @@ with open("input.txt", "r") as file:
             Fib[i] = (Fib[i - 1] + Fib[i - 2]) % 10
     with open("output.txt", "w") as out:
         print(Fib[n], file=out)
-        print(time.perf_counter() - start)
-        print(psutil.Process().memory_info().rss / (1024 * 1024))
+        print("exec time:", time.perf_counter() - start, file=out)
+        print("memory spending (mb):", psutil.Process().memory_info().rss / (1024 * 1024), file=out)
